@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;400;600;800&display=swap');
+$Lato : 'Lato', sans-serif;
+
+/** Colors **/
+$colorGreen : #89bb12;
+
 
 
 body {
   font-family: 'Lato', sans-serif;
+}
+.txt-green {
+  color: $colorGreen;
 }
