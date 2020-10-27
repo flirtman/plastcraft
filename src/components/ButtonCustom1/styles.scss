@@ -1,0 +1,32 @@
+@import "../../css/general";
+
+.button-custom-1 {
+  color: white;
+  font-size: 20pt;
+  padding: 10px 15px 10px 60px;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 50px;
+  background : $colorGrayDark;
+  transition: all 0.5s ease;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+.button-custom-1 img {
+  margin-left: 25px;
+}
+.button-custom-1.green {
+  background: $colorGreen;
+  &:hover {
+    background:#a1d81e;
+  }
+}
+.button-custom-1.blue {
+  background: $colorBlue;
+  &:hover {
+    background: #2599e3;
+  }
+}
