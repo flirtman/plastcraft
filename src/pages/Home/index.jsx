@@ -17,6 +17,8 @@ import Image9 from '../../assets/images/team-box-hr.png';
 import Tetyana from '../../assets/images/Tetyana--thumb.jpg';
 import Oleg from '../../assets/images/Oleg--thumb.jpg';
 
+import MainNav from '../../components/MainNav';
+
 import ButtonCustom1 from '../../components/ButtonCustom1';
 
 import {Link} from "react-router-dom";
@@ -39,18 +41,21 @@ const styleBg2 = {
 const Home = () => {
     return (
         <>
+        <span className={'main-nav-wrap'}>
+            <MainNav/>
+        </span>
         <Header/>
         <div className="section-1">
             <Container>
                 <Row>
-                    <Col className="left-col" md={8} style={{'backgroundImage' : `url(${Image2})`}}>
+                    <Col className="left-col" sm={12} md={12} lg={8} style={{'backgroundImage' : `url(${Image2})`}}>
                         <h3>Ready to go <span className="txt-green">green?</span></h3>
                         <p><span>
                             Join us on our next-generation plastic recycling projects to turn plastic waste into a profitable business and premium products.
                         </span></p>
                         <div className={'left-col-footer'}>Think <span className="txt-green">green!</span></div>
                     </Col>
-                    <Col className="right-col" md={4}>
+                    <Col className="right-col" sm={12} md={4}>
                         <img src={Image1} alt={''}/>
                     </Col>
                 </Row>
@@ -75,7 +80,7 @@ const Home = () => {
         <div className="section-3">
             <Container>
                 <Row>
-                    <Col md={6} className="left-col ">
+                    <Col sm={12} md={6} className="left-col ">
                         <h2>KEYS TO SUCCESS</h2>
                         <div className="text-center">
                             <img src={Image5} alt={''} />
@@ -87,7 +92,7 @@ const Home = () => {
                         <p>Advanced technology for recycling plastic waste.
                             This enables Plastcraft to recycle a large range of plastic types.</p>
                     </Col>
-                    <Col md={6} className="right-col col-md-offset-2">
+                    <Col sm={12} md={6} className="right-col col-md-offset-2">
                         <ul>
                             <li>
                                 <div><strong>key</strong> 02</div>
@@ -129,8 +134,8 @@ const Home = () => {
                         <li><img src={Image7} alt=""/> Polystyrene (PS)</li>
                         <li><img src={Image7} alt=""/> All type of mixtures and compounds</li>
                     </ul>
-                    <div>
-                        <ButtonCustom1 color={'green'} href={'/products'}/>
+                    <div className={'text-center'}>
+                        <ButtonCustom1 color={'green'} href={'/products'} text={'READ MORE'}/>
                     </div>
                 </div>
             </div>
@@ -141,10 +146,10 @@ const Home = () => {
             <Container>
                 <h2 className={'text-center'}>Plastic recycling <span className={'txt-green'}>process</span></h2>
                 <Row>
-                    <Col className={'text-right'} md={5}>
+                    <Col className={'img-wrapper'} sm={12} md={5}>
                         <img src={Image8} alt="" style={{'maxWidth' : '200px'}}/>
                     </Col>
-                    <Col md={7}>
+                    <Col sm={12} md={7}>
                         <ol>
                             <li>High capital cost as plastic recycling processes require
                                 advanced machinery</li>
@@ -157,7 +162,7 @@ const Home = () => {
                 </Row>
                 <hr/>
                 <Row>
-                    <Col className={"col-margin-right"}>
+                    <Col className={"col-margin-right"} sm={12} md={6}>
                         <h3>Automated Recycling Equipment</h3>
                         <p>To make plastic recycling a seamless process, we will make to use of the advanced fully-automated,
                             high-performance, and contemporary range of recycling equipment. Specially selected equipment
@@ -165,7 +170,7 @@ const Home = () => {
                             types of plastic waste.Such equipment features a longer lifespan for ensuring maximum uptime &
                             cost-effective production and allows us to get high-quality products and good profit.</p>
                     </Col>
-                    <Col className={"col-margin-left"}>
+                    <Col className={"col-margin-left"} sm={12} md={6}>
                         <h3>Eco-friendly Process</h3>
                         <p>We are known to care for the environment. Therefore, our team of specialists will make use of eco-friendly
                             process for incurring low-energy consumption and minimal impact on the environment.</p>
@@ -174,7 +179,7 @@ const Home = () => {
                     </Col>
                 </Row>
                 <div className={'text-center'}>
-                    <ButtonCustom1 color={'blue'} href={'/process'}/>
+                    <ButtonCustom1 color={'blue'} href={'/process'} text={'READ MORE'}/>
                 </div>
             </Container>
         </div>
@@ -183,8 +188,8 @@ const Home = () => {
                 <p><small>meet our team</small></p>
                 <h2>Friendly and <span className="txt-green">passionate</span></h2>
                 <Row>
-                    <Col>
-                        <a href="/">
+                    <Col md={6} sm={12}>
+                        <a href="/" className={'team-box-wrap'}>
                             <div className={'team-box'} id={'team-box-item-1'} style={{'background' : `url("${Oleg}")`}}>
                                 <div className={'team-box-name'}>
                                     Oleg<br/>
@@ -198,8 +203,8 @@ const Home = () => {
                             </div>
                         </a>
                     </Col>
-                    <Col>
-                        <a href="/">
+                    <Col md={6} sm={12}>
+                        <a href="/" className={'team-box-wrap'}>
                             <div className={'team-box'} id={'team-box-item-2'} style={{'background' : `url("${Tetyana}")`}}>
                                 <div className={'team-box-name'}>
                                     Tetiana<br/>
@@ -215,8 +220,7 @@ const Home = () => {
                     </Col>
                 </Row>
                 <div>
-                    {/*TODO: change icon*/}
-                    <ButtonCustom1 color={'blue'} href={'/contact'}/>
+                    <ButtonCustom1 color={'green'} icon="mail" text={'CONTACT US'} href={'/contact'}/>
                 </div>
             </Container>
         </div>

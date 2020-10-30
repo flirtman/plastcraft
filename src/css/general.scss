@@ -17,6 +17,10 @@ html {
 }
 body {
   font-family: 'Lato', sans-serif;
+  background: black;
+}
+body .App {
+  background: white;
 }
 .txt-green {
   color: $colorGreen;
@@ -45,3 +49,8 @@ h2 {
   font-weight: 600;
   margin-bottom: 50px;
 }
+
+.bg-blue-regular {
+  background: $colorBlue;
+}
+

@@ -1,0 +1,82 @@
+@import "../../css/general";
+
+header.general {
+  position: relative;
+  background-color: black;
+  height: 100vh !important;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+    display: none;
+  }
+  .logo {
+    width: 100%;
+    max-width: 730px;
+    margin-top: 27px;
+  }
+  ul {
+    margin-top: 30px;
+    padding: 0;
+    margin-bottom: 50px;
+    li {
+      margin-left: 10px;
+      display: inline-block;
+    }
+    li:before {
+      content: ".";
+      margin-right: 10px;
+    }
+    li:first-child {
+      margin-left: 0;
+      &:before {
+        content: "";
+      }
+    }
+    li.active {
+      a {
+        color: $colorGreen;
+      }
+    }
+    a {
+      font-size: 15pt;
+      color: white;
+      text-transform: uppercase;
+      &:hover {
+        color: $colorGreen;
+        text-decoration: none;
+      }
+    }
+  }
+  .h-title {
+    font-size: 3.5rem;
+    line-height: normal;
+  }
+  .cover {
+    background: #0000008c;
+    width: 100%;
+    height: 100rem;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .main-nav-wrap {
+    display: none;
+  }
+}
+

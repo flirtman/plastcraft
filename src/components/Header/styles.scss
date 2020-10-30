@@ -1,6 +1,6 @@
 @import "../../css/general";
 
-header {
+header.home {
   position: relative;
   background-color: black;
   height: 110vh;
@@ -20,7 +20,19 @@ header {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    opacity: 0.3;
+    opacity: 1;
+    animation: 0s ease 0s normal forwards 1 fadein;
+  }
+  @keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:0.3; }
+  }
+
+  @-webkit-keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:0.3; }
   }
   .container {
     position: relative;
@@ -79,12 +91,13 @@ header {
     line-height: normal;
   }
 
-  @media (pointer: coarse) and (hover: none) {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-    video {
-      display: none;
-    }
-  }
+  //@media (pointer: coarse) and (hover: none) {
+  //  background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  //  background-position: center;
+  //  video {
+  //    display: none;
+  //  }
+  //}
 }
 
 

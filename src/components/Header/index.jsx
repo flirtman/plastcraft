@@ -12,13 +12,13 @@ import {Link} from "react-router-dom";
 import NavList from '../NavList';
 // https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4
 
-
+import imgPreload from '../../assets/images/video-preload.jpg';
 
 const Header = () => {
     return (
-        <header>
+        <header className={'home'}>
             <div className="overlay"></div>
-            <video playsInline="playsInline" autoPlay="autoplay" muted="muted" loop="loop">
+            <video playsInline="playsInline" autoPlay="autoplay" muted="muted" loop="loop" poster={imgPreload}>
                 <source src={video} type="video/mp4"/>
             </video>
             <div className="container h-100">
