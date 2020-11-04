@@ -19,7 +19,12 @@ const ButtonCustom1 = (props) => {
 
     return (
         <>
-            <Link to={props.href} className={`button-custom-1 ${props.color}`}> {props.text} <img src={icon} alt={''}/></Link>
+            {!props.href === false &&
+                <Link to={props.href} className={`button-custom-1 ${props.color}`}> {props.text} <img src={icon} alt={''}/></Link>
+            }
+            {!props.href &&
+                <div className={`button-custom-1 ${props.color}`}> {props.text} <img src={icon} alt={''}/></div>
+            }
         </>
     )
 };

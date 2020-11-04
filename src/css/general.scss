@@ -42,15 +42,18 @@ body .App {
     text-decoration: none;
   }
 }
-
 h2 {
   color: $colorBlue;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 50px;
 }
-
 .bg-blue-regular {
   background: $colorBlue;
+}
+.break {
+  display: block;
+  width: 100%;
+  clear: both;
 }
 

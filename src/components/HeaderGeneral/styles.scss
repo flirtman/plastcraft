@@ -7,7 +7,6 @@ header.general {
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
-
   .container {
     position: relative;
     z-index: 2;
@@ -26,7 +25,7 @@ header.general {
   .logo {
     width: 100%;
     max-width: 730px;
-    margin-top: 27px;
+    margin-top: 124px;
   }
   ul {
     margin-top: 30px;
@@ -72,6 +71,10 @@ header.general {
     position: absolute;
     z-index: 0;
     top: 0;
+  }
+  .MuiSvgIcon-root {
+    font-size: 6rem;
+    transform: rotate(90deg);
   }
 }
 @media only screen and (min-width: 992px) {

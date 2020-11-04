@@ -1,0 +1,42 @@
+@import "../../css/general";
+
+.projects-wrap {
+  .row .col:first-child {
+    border-right: 1px solid #ccc;
+  }
+  .project-box {
+    text-align: center;
+    padding: 100px;
+    p {
+      min-height: 135px;
+    }
+  }
+  .mechanical-recycling-display,
+  .chemical-recycling-display {
+    margin-bottom: 100px;
+    border-top: 1px solid #ccc;
+    padding-top: 50px;
+    h2 {
+      text-align: center;
+      color: $colorGrayLight;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+.modal-header,
+.modal-footer {
+  padding: 1rem 4rem ;
+}
+.modal-footer {
+  justify-content: center;
+}
+.modal-body {
+  padding: 4rem;
+}
+.subscription-wrap {
+  display: table;
+  margin: 20px auto;
+  color: #989ea2 !important;
+}

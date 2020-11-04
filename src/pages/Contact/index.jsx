@@ -18,7 +18,6 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 
 import './styles.scss';
-import ButtonCustom1 from "../../components/ButtonCustom1";
 
 import emailFly from '../../assets/images/email-fly-green.png';
 import Footer from "../../components/Footer";
@@ -26,10 +25,10 @@ import Footer from "../../components/Footer";
 const Contact = () => {
     return (
         <>
-        <span className={'main-nav-wrap'}>
-            <MainNav/>
-        </span>
-        <HeaderGeneral title={'Contact Us'} background={mapBg}/>
+            <span className={'main-nav-wrap'}>
+                <MainNav/>
+            </span>
+            <HeaderGeneral title={'Contact Us'} background={mapBg}/>
             <div className="container" style={{marginBottom: '100px'}}>
                 <div className="header-wrapper">
                     <div style={{maxWidth: '600px'}}>

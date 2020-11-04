@@ -1,11 +1,12 @@
 import React from 'react';
-import { } from 'react-bootstrap'
-
 
 import './styles.scss';
 import logo from '../../assets/images/logo_814x166.png';
 import {Link} from "react-router-dom";
 import NavList from '../NavList';
+
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Fade from 'react-reveal/Fade';
 
 const HeaderGeneral = (props) => {
     const headerStyle = {
@@ -22,6 +23,9 @@ const HeaderGeneral = (props) => {
                         <NavList/>
                         <div className={'h-title'}>
                             <p>{props.title}</p>
+                            <Fade top>
+                                <ArrowForwardIosIcon/>
+                            </Fade>
                         </div>
                     </div>
                 </div>

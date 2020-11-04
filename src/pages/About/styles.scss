@@ -1,0 +1,34 @@
+@import "../../css/general";
+
+.about-us-wrap {
+  hr {
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
+  .img-person-wrap {
+    img {
+      width: auto;
+    }
+  }
+  .team-member1-right {
+    max-width: 400px;
+  }
+  .team-member2-right {
+    text-align: left;
+    img {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .team-member1-left {
+    text-align: right;
+  }
+  .team-member2-left {
+    float: right;
+    max-width: 400px;
+  }
+  .section-4 {
+    background-color: $colorGrayLightSuper;
+    padding: 100px 0;
+  }
+}
