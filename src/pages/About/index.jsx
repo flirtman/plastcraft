@@ -11,8 +11,10 @@ import Tetyana1 from '../../assets/images/Tetyana-1.png'
 
 const About = () => {
     useEffect(() => {
-        const hashIs = window.location.hash.replace('#','')
-        document.getElementById(hashIs).scrollIntoView({ block: 'center' });
+        const hashIs = window.location.hash.replace('#','');
+        if(hashIs !== "") {
+            document.getElementById(hashIs).scrollIntoView({ block: 'center' });
+        }
     }, []);
     return (
         <div className="about-us-wrap">
