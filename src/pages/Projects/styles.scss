@@ -23,8 +23,17 @@
     p {
       text-align: center;
     }
+    embed {
+      height: 800px;
+    }
+  }
+  [display="true"] { display: block; }
+  [display="false"] { display: none; }
+  .MuiInputBase-root {
+    margin-bottom: 15px;
   }
 }
+
 .modal-header,
 .modal-footer {
   padding: 1rem 4rem ;

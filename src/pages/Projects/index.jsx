@@ -10,13 +10,19 @@ import './styles.scss';
 
 
 import mechanical_recycling_business_plan_final from '../../assets/pdf/mechanical_recycling_business_plan_final.pdf';
+import axios from "axios";
+import swal from "sweetalert";
 
 
 const Projects = () => {
     const [projectSelected, setProjectSelected] = useState(null);
 
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        resetValues();
+    };
+
     function handleShow (project) {
         setProjectSelected(project);
         setShow(true);
@@ -27,7 +33,7 @@ const Projects = () => {
         setSubscription(event.target.checked);
     };
 
-    const [fullName, setFullName] = useState(null);
+    const [fullName, setFullName] = useState('');
     const handleFullName = (e) => {
         setFullName(e.target.value);
     };
@@ -43,30 +49,72 @@ const Projects = () => {
     };
 
     const validation = () => {
-        return true;
+        var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}$/;
+        var emailRGEX = /^.{1,}@.{2,}\..{2,}/;
+        var nameRGEX = /^[a-zA-Z ]+$/;
+
+        var phoneResult = phone.trim() !== '' ? phoneRGEX.test(phone.trim()) : true;
+        var emailResult = emailRGEX.test(email.trim());
+        var fullNameResult = nameRGEX.test(fullName.trim());
+
+        return {
+            phone: phoneResult,
+            email: emailResult,
+            fullName: fullNameResult
+        };
     };
 
-    const handleSubmit = () => {
-        console.log(fullName);
-        console.log(email);
-        console.log(phone);
-        console.log(subscription);
-        console.log(projectSelected);
+    const [fullNameError, setFullNameError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [phoneError, setPhoneError] = useState(false);
 
-        if(validation) {
+    const handleSubmit = () => {
+
+        let errorsValidator = validation();
+
+        errorsValidator.fullName ? setFullNameError(false) : setFullNameError(true);
+        errorsValidator.email ? setEmailError(false) : setEmailError(true);
+        errorsValidator.phone ? setPhoneError(false) : setPhoneError(true);
+
+        if(errorsValidator.fullName && errorsValidator.email && errorsValidator.phone) {
             localStorage.setItem("gaccess", `${projectSelected}`);
-            handleClose();
+
+            let objData = {
+                projectSelected: projectSelected,
+                fullName : fullName,
+                email : email,
+                phone : phone,
+                subscription : subscription
+            };
+
+            axios.post(`${process.env.PUBLIC_URL}/api/projects.php`, objData)
+                .then(response => {
+                    //console.log("contextApi got it", response);
+                    swal("Access was granted!", "Business plan was sent to your email.", "success");
+
+                    handleClose();
+                    resetValues();
+
+                }).catch(error => {
+                console.log("contextApi error.response", error.response);
+                swal("Oups!", "We have some error here!", "error");
+            });
         }
 
+    };
+
+    const resetValues = () => {
+        setFullNameError(false);
+        setEmailError(false);
+        setPhoneError(false);
+
+        setFullName('');
+        setEmail('');
+        setPhone('');
     };
 
     const displayProject = (projectName) => {
-        if(projectName === localStorage.getItem("gaccess")) {
-            return 'block'
-        }
-        else {
-            return 'none'
-        }
+        return projectName === localStorage.getItem("gaccess") ? 'true' : 'false' ;
     };
 
     return (
@@ -80,9 +128,9 @@ const Projects = () => {
                     <p>To get access to the business plan, please go through a simple registration below.</p>
                     <div>
                         <form noValidate autoComplete="off">
-                            <TextField required id="standard-required" label="Full Name" defaultValue="" fullWidth onChange={handleFullName}/><br/>
-                            <TextField required id="standard-required" label="Email" defaultValue="" fullWidth onChange={handleEmail}/><br/>
-                            <TextField id="standard-required" label="Phone" defaultValue="" fullWidth onChange={handlePhone}/><br/>
+                            <TextField required id="standard-required" label="Full Name" defaultValue="" fullWidth onChange={handleFullName} error={fullNameError}/><br/>
+                            <TextField required id="standard-required" label="Email" defaultValue="" fullWidth onChange={handleEmail} error={emailError}/><br/>
+                            <TextField id="standard-required" label="Phone" defaultValue="" fullWidth onChange={handlePhone} error={phoneError}/><br/>
                             <label className={'subscription-wrap'}>
                                 <Checkbox
                                     color="primary"
@@ -113,32 +161,41 @@ const Projects = () => {
                 <Row>
                     <Col>
                         <div className={'project-box'}>
-                            <div>
-                                <h2>Mechanical <span className={'txt-green'}>Recycling</span></h2>
+                            <h2>Mechanical <span className={'txt-green'}>Recycling</span></h2>
+                            <span display={displayProject('mechanical-recycling') === 'true' ? 'false' : 'true' }>
                                 <p>Mechanical recycling of mostpost-industrial plastic waste into top-grade plastic pellets for the further manufacturing process.</p>
-                            </div>
-                            <div className={'text-center'}>
-                                <span onClick={() => handleShow('mechanical-recycling')}><ButtonCustom1 color={'blue'} href={false} text={'READ MORE'}/></span>
-                            </div>
+                                <div className={'text-center'}>
+                                    <span onClick={() => handleShow('mechanical-recycling')}><ButtonCustom1 color={'blue'} href={false} text={'READ MORE'}/></span>
+                                </div>
+                            </span>
+                            <span display={displayProject('mechanical-recycling')}>
+                                Thank you for your interest.<br/>
+                                You can now view it below.<br/>
+                                It is also have been sent to your email.
+                            </span>
                         </div>
                     </Col>
                     <Col>
                         <div className={'project-box'}>
-                            <div>
-                                <h2>Chemical <span className={'txt-green'}>Recycling</span></h2>
+                            <h2>Chemical <span className={'txt-green'}>Recycling</span></h2>
+                            <span display={displayProject('chemical-recycling') === 'true' ? 'false' : 'true' }>
                                 <p>Chemical recycling of post-consumer plastic waste into high-quality hydrocarbon fuel for use in industry, transport, heating, etc.</p>
-                            </div>
-                            <div className={'text-center'}>
-                                <span onClick={() => handleShow('chemical-recycling')}><ButtonCustom1 color={'blue'} href={false} text={'READ MORE'}/></span>
-                            </div>
+                                <div className={'text-center'}>
+                                    <span onClick={() => handleShow('chemical-recycling')}><ButtonCustom1 color={'blue'} href={false} text={'READ MORE'}/></span>
+                                </div>
+                            </span>
+                            <span display={displayProject('chemical-recycling')}>
+                                Thank you for your interest.<br/>
+                                Chemical Recycling business plan is currently unavailable. We will keep you posted about the updates.
+                            </span>
                         </div>
                     </Col>
                 </Row>
-                <div className={'mechanical-recycling-display'} style={{display : `${displayProject('mechanical-recycling')}`}}>
+                <div className={'mechanical-recycling-display'} display={displayProject('mechanical-recycling')}>
                     <h2>Mechanical Recycling</h2>
-                    <embed src={mechanical_recycling_business_plan_final} type="application/pdf" width="100%" height="600px" />
+                    <embed src={mechanical_recycling_business_plan_final} type="application/pdf" width="100%"/>
                 </div>
-                <div className={'chemical-recycling-display'} style={{display : `${displayProject('chemical-recycling')}`}}>
+                <div className={'chemical-recycling-display'} display={displayProject('chemical-recycling')}>
                     <h2>Chemical Recycling</h2>
                     <p>The business plan is coming soon...</p>
                 </div>

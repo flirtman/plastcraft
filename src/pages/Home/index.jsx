@@ -189,7 +189,12 @@ const Home = () => {
                 <h2>Friendly and <span className="txt-green">passionate</span></h2>
                 <Row>
                     <Col md={6} sm={12}>
-                        <a href="/" className={'team-box-wrap'}>
+                        <Link
+                            to={{
+                                pathname : '/about',
+                                hash : '#tm1'
+                            }}
+                            className={'team-box-wrap'}>
                             <div className={'team-box'} id={'team-box-item-1'} style={{'background' : `url("${Oleg}")`}}>
                                 <div className={'team-box-name'}>
                                     Oleg<br/>
@@ -201,10 +206,15 @@ const Home = () => {
                                 <div className={'team-box-title'}>CEO- Founder</div>
                                 <div className={'team-box-overlay'}></div>
                             </div>
-                        </a>
+                        </Link>
                     </Col>
                     <Col md={6} sm={12}>
-                        <a href="/" className={'team-box-wrap'}>
+                        <Link
+                            to={{
+                                pathname : '/about',
+                                hash : '#tm2'
+                            }}
+                            className={'team-box-wrap'}>
                             <div className={'team-box'} id={'team-box-item-2'} style={{'background' : `url("${Tetyana}")`}}>
                                 <div className={'team-box-name'}>
                                     Tetiana<br/>
@@ -216,7 +226,7 @@ const Home = () => {
                                 <div className={'team-box-title'}>Finance Director - Founder</div>
                                 <div className={'team-box-overlay'}></div>
                             </div>
-                        </a>
+                        </Link>
                     </Col>
                 </Row>
                 <div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './styles.scss';
 import MainNav from "../../components/MainNav";
 import HeaderGeneral from "../../components/HeaderGeneral";
@@ -10,6 +10,10 @@ import Oleg1 from '../../assets/images/Oleg-1.png'
 import Tetyana1 from '../../assets/images/Tetyana-1.png'
 
 const About = () => {
+    useEffect(() => {
+        const hashIs = window.location.hash.replace('#','')
+        document.getElementById(hashIs).scrollIntoView({ block: 'center' });
+    }, []);
     return (
         <div className="about-us-wrap">
             <span className={'main-nav-wrap'}>
@@ -42,6 +46,9 @@ const About = () => {
                         Plastcraft boasts a team of motivated and experienced members who are passionate about minimizing plastic waste across<br/>
                         the country through an effective plastic recycling process.
                     </p>
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
                 <Row>
                     <Col>
@@ -51,7 +58,7 @@ const About = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col>
+                    <Col id={'tm1'}>
                         <div className={'team-member1-right'}>
                             <h3>Oleg Belyak</h3>
                             <h4><small>CEO</small></h4>
@@ -78,7 +85,7 @@ const About = () => {
             <hr/>
             <Container/>
                 <Row>
-                    <Col>
+                    <Col id={'tm2'}>
                         <div className={'team-member2-left'}>
                             <h3>Tetiana Pisotska</h3>
                             <h4><small>Finance Director</small></h4>
