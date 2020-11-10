@@ -87,7 +87,7 @@ const Projects = () => {
                 subscription : subscription
             };
 
-            axios.post(`${process.env.PUBLIC_URL}/api/projects.php`, objData)
+            axios.post(`/api/projects.php`, objData)
                 .then(response => {
                     //console.log("contextApi got it", response);
                     swal("Access was granted!", "Business plan was sent to your email.", "success");

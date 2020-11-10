@@ -1,7 +1,8 @@
 <?php
 $data = json_decode(file_get_contents("php://input"), true);
 
-$to = 'info@plastacraft.ca';
+//$to = 'info@plastacraft.ca';
+$to = 'iliasvinin@gmail.com';
 $fullName = $data['name'];
 $email = $data['email'];
 $phone = $data['phone'];
@@ -28,3 +29,7 @@ if (@mail($to, $mail_subject, $message, $headers)) {
 } else {
     echo json_encode( 'failed' );
 }
+
+
+echo json_encode( 'The message has been sent.');
+//echo json_decode($to.' '.$fullName.' '.$email.' '.$phone.' '.$company.' '.$messageTxt.' '.$mail_subject);

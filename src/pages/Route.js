@@ -14,7 +14,6 @@ const App = (props) => (
             <div id="loading-screen">Loading...</div>
         }>
             <Switch>
-
                 <Route exact path={`/`} component={Home}/>
                 <Route path={`/projects`} component={Projects}/>
                 <Route path={`/products`} component={Products}/>

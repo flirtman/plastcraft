@@ -78,9 +78,8 @@ const ContactForm = () => {
             (errorsValidator.message || message === '')
         ) {
 
-            axios.post(`${process.env.PUBLIC_URL}/api/contact.php`, objData)
+            axios.post(`/api/contact.php`, objData)
                 .then(response => {
-                    //console.log("contextApi got it", response);
                     swal("Good job!", "The information is on the way!", "success");
                     resetValues();
                 }).catch(error => {
