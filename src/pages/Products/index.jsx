@@ -24,7 +24,11 @@ const Products = () => {
             </span>
             <HeaderGeneral title={'Plastcraft Products'} background={mapBg}/>
             <div className="container" style={{marginBottom: '100px'}}>
+                <br/>
+                <br/>
+                <br/>
                 <span className={'text-center'}>
+                    <h2>Our <span className={'txt-green'}>Products</span></h2>
                     <p>With our unique process of recycling plastic waste and converting them same into useful plastic pellets for further manufacturing,
                         we offer a comprehensive range of plastic-based products at our portal. We aim at meeting all your specific needs – right from the most standard
                         pellets to the most specialized versions for optimum results.
@@ -35,8 +39,8 @@ const Products = () => {
                 <br/>
 
                 <Row>
-                    <Col sm={12} md={6} className={'img-col'} style={{backgroundImage: `url(${LDPE})`}}></Col>
-                    <Col sm={12} md={6} className={'txt-col'}>
+                    <Col md={{span: 12, order: 2 }} lg={{span: 6, order: 1 }} className={'img-col'} style={{backgroundImage: `url(${LDPE})`}}></Col>
+                    <Col md={{span: 12, order: 1 }} lg={{span: 12, order: 2 }} lg={{span: 6, order: 2 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>LDPE <span className={'txt-green'}>(Low Density Polyethylene)</span></h2>
                             <p>
@@ -47,7 +51,7 @@ const Products = () => {
                         <div className={'triangle-right-60'}></div>
                     </Col>
 
-                    <Col sm={12} md={6} className={'txt-col'}>
+                    <Col md={{span: 12, order: 3 }} lg={{span: 6, order: 3 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>LLDPE <span className={'txt-green'}>(Linear Low-Density Polyethylene)</span></h2>
                             <p>
@@ -57,10 +61,10 @@ const Products = () => {
                         </div>
                         <div className={'triangle-left-60'}></div>
                     </Col>
-                    <Col sm={12} md={6} className={'img-col'} style={{backgroundImage: `url(${LLDPE})`}}></Col>
+                    <Col md={{span: 12, order: 4 }} lg={{span: 6, order: 4 }} className={'img-col'} style={{backgroundImage: `url(${LLDPE})`}}></Col>
 
-                    <Col sm={12} md={6} className={'img-col'} style={{backgroundImage: `url(${HDPE})`}}></Col>
-                    <Col sm={12} md={6} className={'txt-col'}>
+                    <Col md={{span: 12, order: 6 }} lg={{span: 6, order: 5 }} className={'img-col'} style={{backgroundImage: `url(${HDPE})`}}></Col>
+                    <Col md={{span: 12, order: 5 }} lg={{span: 6, order: 6 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>HDPE <span className={'txt-green'}>(High Density Polyethylene)</span></h2>
                             <p>
@@ -71,7 +75,7 @@ const Products = () => {
                         <div className={'triangle-right-60'}></div>
                     </Col>
 
-                    <Col sm={12} md={6} className={'txt-col'}>
+                    <Col md={{span: 12, order: 7 }} lg={{span: 6, order: 7 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>PP <span className={'txt-green'}>(Polypropylene)</span></h2>
                             <p>
@@ -83,10 +87,10 @@ const Products = () => {
                         </div>
                         <div className={'triangle-left-60'}></div>
                     </Col>
-                    <Col sm={12} md={6} className={'img-col'} style={{backgroundImage: `url(${PP})`}}></Col>
+                    <Col md={{span: 12, order: 8 }} lg={{span: 6, order: 8 }} className={'img-col'} style={{backgroundImage: `url(${PP})`}}></Col>
 
-                    <Col sm={12} md={6} className={'img-col'} style={{backgroundImage: `url(${ABS})`}}></Col>
-                    <Col sm={12} md={6} className={'txt-col'}>
+                    <Col md={{span: 12, order: 10 }} lg={{span: 6, order: 9 }} className={'img-col'} style={{backgroundImage: `url(${ABS})`}}></Col>
+                    <Col md={{span: 12, order: 9 }} lg={{span: 6, order: 10 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>ABS <span className={'txt-green'}>(Acrylonitrile Butadiene Styrene)</span></h2>
                             <p>

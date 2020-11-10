@@ -14,6 +14,9 @@ const Process = () => {
             </span>
             <HeaderGeneral title={'Plastic Recycling Process'} background={mapBg}/>
             <div className="container" style={{marginBottom: '100px'}}>
+                <br/>
+                <br/>
+                <br/>
                 <h2>Get the Know-how of Our <span className={'txt-green'}>Comprehensive Plastic Recycling Process</span></h2>
                 <p>
                     Plastic recycling is the process of recycling nation-wide plastic waste materials.
