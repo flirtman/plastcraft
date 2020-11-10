@@ -82,4 +82,14 @@ header.general {
     display: none;
   }
 }
+@media only screen and (max-width: 991px) {
+  header.general .logo,
+  header.general ul {
+    display: none;
+  }
+  .plastcraft-products-wrap .container {
+    margin-top: 0;
+  }
+}
+
 

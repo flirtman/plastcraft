@@ -137,6 +137,7 @@ const Home = () => {
                     <div className={'text-center'}>
                         <ButtonCustom1 color={'green'} href={'/products'} text={'READ MORE'}/>
                     </div>
+                    <div className={'triangle-left'}></div>
                 </div>
             </div>
             <div className="right-col" style={styleBg2}>

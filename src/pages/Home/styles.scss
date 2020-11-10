@@ -282,12 +282,25 @@
     .h-title {
       font-size: 2.5rem;
     }
+    .logo {
+      display: none;
+    }
+  }
+  header.home {
+    .h-title {
+      p {
+        margin-bottom: 10rem;
+      }
+    }
   }
   .section-1 {
     padding-bottom: 0;
     margin: 0;
     .left-col {
       width: 100%;
+      p {
+        font-size: 15pt;
+      }
     }
     .right-col {
       display: none;

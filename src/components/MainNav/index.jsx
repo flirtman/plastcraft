@@ -1,22 +1,25 @@
 import React from 'react';
 import {Navbar, Nav,  NavDropdown} from 'react-bootstrap';
+import logo from '../../assets/images/logo_814x166.png';
+import {Link} from "react-router-dom";
 
 const MainNav = () => {
   return (
-      <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar bg="dark" variant="dark" expand="lg">
+          <Navbar.Brand href="/" style={{width: '100%', maxWidth: '150px'}}>
+              <img src={logo} alt="" className="logo"  style={{width: '100%', maxWidth: '150px'}} />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                  <Nav.Link href="#home">Home</Nav.Link>
-                  <Nav.Link href="#link">Link</Nav.Link>
-                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                  </NavDropdown>
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/projects">Projects</Nav.Link>
+                  <Nav.Link href="/products">Products</Nav.Link>
+                  <Nav.Link href="/process">Process</Nav.Link>
+                  <Nav.Link href="/about">About Us</Nav.Link>
+                  <Nav.Link href="/contact">Contact Us</Nav.Link>
+                  <NavDropdown.Divider style={{borderTop: '1px solid #49535d'}}/>
+                  <a href="tel:+14389799720" style={{color: 'rgba(255,255,255,.5)'}}>+1 (438) 979-9720</a>
               </Nav>
           </Navbar.Collapse>
       </Navbar>

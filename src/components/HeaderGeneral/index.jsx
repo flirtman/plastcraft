@@ -22,7 +22,7 @@ const HeaderGeneral = (props) => {
                         <div><Link to={'/'}><img src={logo} alt="" className={'logo'}/></Link></div>
                         <NavList/>
                         <div className={'h-title'}>
-                            <p>{props.title}</p>
+                            <h1>{props.title}</h1>
                             <Fade top>
                                 <ArrowForwardIosIcon/>
                             </Fade>
