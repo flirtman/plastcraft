@@ -16,6 +16,7 @@ import swal from "sweetalert";
 
 const Projects = () => {
     const [projectSelected, setProjectSelected] = useState(null);
+    const [loading,setLoading] = useState(false)
 
     const [show, setShow] = useState(false);
     const handleClose = () => {
@@ -87,17 +88,21 @@ const Projects = () => {
                 subscription : subscription
             };
 
-            axios.post(`/api/projects.php`, objData)
+            setLoading(true)
+
+            axios.post(`http://localhost:8000/public/api/projects.php`, objData)
                 .then(response => {
                     //console.log("contextApi got it", response);
                     swal("Access was granted!", "Business plan was sent to your email.", "success");
 
                     handleClose();
                     resetValues();
+                    setLoading(false)
 
                 }).catch(error => {
-                console.log("contextApi error.response", error.response);
                 swal("Oups!", "We have some error here!", "error");
+                setLoading(false)
+
             });
         }
 
@@ -147,9 +152,14 @@ const Projects = () => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="success" onClick={handleSubmit}>
+                   {loading ?
+                    <Button variant="success" onClick={handleSubmit} disabled>
                         Continue
-                    </Button>
+                    </Button> :
+                    <Button variant="success" onClick={handleSubmit}>
+                    Continue
+                </Button> 
+                    }
                 </Modal.Footer>
 
             </Modal>

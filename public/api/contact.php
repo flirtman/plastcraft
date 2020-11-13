@@ -24,12 +24,4 @@ $message = '<table style="width:100%">
         <tr><td>Message: '.$messageTxt.'</td></tr>
     </table>';
 
-if (@mail($to, $mail_subject, $message, $headers)) {
-    echo json_encode( 'The message has been sent.');
-} else {
-    echo json_encode( 'failed' );
-}
-
-
-echo json_encode( 'The message has been sent.');
-//echo json_decode($to.' '.$fullName.' '.$email.' '.$phone.' '.$company.' '.$messageTxt.' '.$mail_subject);
+mail($email,$mail_subject,$message,$headers);
