@@ -1,7 +1,6 @@
 import React from 'react';
 import {Navbar, Nav,  NavDropdown} from 'react-bootstrap';
 import logo from '../../assets/images/logo_814x166.png';
-import {Link} from "react-router-dom";
 
 const MainNav = () => {
   return (
@@ -14,7 +13,8 @@ const MainNav = () => {
               <Nav className="mr-auto">
                   <Nav.Link href="/">Home</Nav.Link>
                   <Nav.Link href="/projects">Projects</Nav.Link>
-                  <Nav.Link href="/products">Products</Nav.Link>
+                  <Nav.Link href="/we-sale">We Sale</Nav.Link>
+                  <Nav.Link href="/we-buy">We Buy</Nav.Link>
                   <Nav.Link href="/process">Process</Nav.Link>
                   <Nav.Link href="/about">About Us</Nav.Link>
                   <Nav.Link href="/contact">Contact Us</Nav.Link>

@@ -13,7 +13,8 @@ const NavList = () => {
         <ul>
             <li className={isActive('')}><Link to={'/'}>Home</Link></li>
             <li className={isActive('projects')}><Link to={'/projects'}>Projects</Link></li>
-            <li className={isActive('products')}><Link to={'/products'}>Products</Link></li>
+            <li className={isActive('we-sale')}><Link to={'/we-sale'}>We Sale</Link></li>
+            <li className={isActive('we-buy')}><Link to={'/we-buy'}>We Buy</Link></li>
             <li className={isActive('process')}><Link to={'/process'}>Process</Link></li>
             <li className={isActive('about')}><Link to={'/about'}>About Us</Link></li>
             <li className={isActive('contact')}><Link to={'/contact'}>Contact Us</Link></li>

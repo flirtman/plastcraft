@@ -125,7 +125,6 @@ const Projects = () => {
     return (
         <div className={'projects-wrap'}>
             <Modal show={show} onHide={handleClose}>
-
                 <Modal.Header closeButton>
                     <Modal.Title>Business Plan</Modal.Title>
                 </Modal.Header>
@@ -158,7 +157,7 @@ const Projects = () => {
                     </Button> :
                     <Button variant="success" onClick={handleSubmit}>
                     Continue
-                </Button> 
+                </Button>
                     }
                 </Modal.Footer>
 
@@ -168,6 +167,9 @@ const Projects = () => {
             </span>
             <HeaderGeneral title={'Projects'} background={mapBg}/>
             <div className="container">
+                <div className={'under-line'}>
+                    <p>Great opportunity for investors and shareholders to join the next-generation plastic recycler.</p>
+                </div>
                 <Row>
                     <Col>
                         <div className={'project-box'}>

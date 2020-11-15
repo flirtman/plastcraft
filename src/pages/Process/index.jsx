@@ -22,7 +22,7 @@ const Process = () => {
                     Plastic recycling is the process of recycling nation-wide plastic waste materials.
                     The plastic waste materials that we receive in our plant is initially inspected, sorted,
                     and transformed into top-quality plastic pellets under the supervision of our experienced technicians and engineers.
-                    Finished plastic pellets & granules are utilized by our customers for casting multiple plastic parts or products.
+                    Finished plastic pellets are utilized by our customers for casting multiple plastic parts or products.
                     Get access to our detailed process of plastic waste recycling and join our noble movement of ensuring environmental friendliness all across the world.
                 </p>
                 <hr/>
@@ -33,8 +33,6 @@ const Process = () => {
                     <li>Saving oil, non-renewable, and precious raw materials –which also serve to be the manufacturing foundation of
                         plastic materials (40 percent of the total oil production in the world gets processed into plastics).</li>
                     <li>Allows effective energy savings in comparison to the production of primary plastic materials.</li>
-                    <li>Helps in doing away with the cost of incineration or landfills. It is also vital to know that a plastic bottle
-                        is known to take around 400 years to decompose completely. At the same time, a plastic bag is known to take around 450 years to disintegrate.</li>
                 </ul>
                 <hr/>
 
@@ -45,35 +43,7 @@ const Process = () => {
                 <p>At Plastcraft, we aim at following an environmentally-friendly and thorough process of plastic waste recycling for optimum results.</p>
                 <hr/>
 
-                <h2>Receiving <span className={'txt-green'}>raw material</span></h2>
-                <p>Plastcraft receives its raw materials in the form of huge volumes of plastic waste materials from all around the country.
-                    We stock them up into huge bales that are later on unloaded & stored at our inventory.</p>
-                <hr/>
-
-                <h2>Optical & Mechanical <span className={'txt-green'}>Sorting</span></h2>
-                <p>The initial step is involved with breaking the bale and loosening the raw materials. The raw materials are
-                    sent over to dedicated sorting equipment for separating the contaminants from the input. Color sortation if also carried out.</p>
-                <hr/>
-
-                <h2>Manual <span className={'txt-green'}>Sorting & Inspection</span></h2>
-                <p>For ensuring the overall quality of the product, manual sorting & inspections are carried out. Our capable team helps in eliminating
-                    to the minimum of contaminants left in the final product.</p>
-                <hr/>
-
-                <h2>Grinding </h2>
-                <p>Our raw materials are then ground into smaller pellets. The pellets are held into silos until the same is ready to be sent for the washing process.</p>
-                <hr/>
-
-                <h2>Washing </h2>
-                <p>The materials get washed thoroughly with soap. It is followed by a water-saving treatment process. Glass and rock get eliminated with the help of
-                    the centrifugal techniques.</p>
-                <hr/>
-
-                <h2>Packaging </h2>
-                <p>The washed pellets are then packaged and stored for further laboratory results.</p>
-                <p>Plastcraft also boasts the presence of a dedicated team of lab technologists for conducting in-depth quality
-                    control practices for ensuring the overall consistency of plastic pellets.</p>
-
+                
 
             </div>
             <Footer/>

@@ -16,7 +16,7 @@
   .team-member2-right {
     text-align: left;
     img {
-      position: absolute;
+
       bottom: 0;
     }
   }
@@ -32,3 +32,11 @@
     padding: 100px 0;
   }
 }
+
+@media only screen and (min-width: 575px) {
+  .md-align-right {
+    text-align: right;
+  }
+}
+
+

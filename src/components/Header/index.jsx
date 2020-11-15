@@ -2,7 +2,8 @@ import React from 'react';
 import { } from 'react-bootstrap'
 
 /** more videos: https://www.pexels.com/search/videos/forest/ **/
-import video from '../../assets/video/production_ID_4908396.mp4';
+// import video from '../../assets/video/production_ID_4908396.mp4';
+import video from '../../assets/video/v-smaller1.mp4';
 //import video from '../../assets/video/Pexels-Videos-1448735.mp4';
 
 
@@ -10,7 +11,6 @@ import './styles.scss';
 import logo from '../../assets/images/logo_814x166.png';
 import {Link} from "react-router-dom";
 import NavList from '../NavList';
-// https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4
 
 /** https://drive.google.com/file/d/1XNr2XvHtfktqOFqmI7DcKNP5UOw3yTc2/view?usp=sharing **/
 

@@ -21,9 +21,9 @@ $projectSelected = $data['projectSelected'];
 $subscription = $data['subscription'];
 $mail_subject = "Plastacraft.ca - Business plan [". $projectSelected ."]";
 
-$from_email='noreply@biramedia.com';
+$from_email = 'noreply@blastcraft.ca';
 
-$headers .= "From: noreply@biramedia.com" . "\r\n";
+$headers .= "From: $from_email" . "\r\n";
 $headers .= "Reply-To: $from_email" . "\r\n";
 $headers .= "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-Type: multipart/mixed; boundary=\"" . $separator . "\"" . "\r\n";
