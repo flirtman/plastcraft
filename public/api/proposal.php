@@ -6,9 +6,10 @@ $to = 'biramediagroup@gmail.com';
 $fullName = $data['name'];
 $email = $data['email'];
 $phone = $data['phone'];
-$projectSelected = $data['projectSelected'];
-$subscription = $data['subscription'];
-$mail_subject = "Plastacraft.ca Business Plan View - Projects";
+$company = $data['company'];
+$serviceName = $data['serviceName'];
+$messageTxt = $data['message'];
+$mail_subject = "Plastacraft.ca Proposal Form";
 
 $from_email = 'noreply@plastcraft.ca';
 $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -21,8 +22,9 @@ $message = '<table style="width:100%">
         <tr><td>Full Name: '.$fullName.'</td></tr>
         <tr><td>Email: '.$email.'</td></tr>
         <tr><td>Phone: '.$phone.'</td></tr>
-        <tr><td>Project Selected: '.$projectSelected.'</td></tr>
-        <tr><td>Subscription: '.$subscription.'</td></tr>
+        <tr><td>Company: '.$company.'</td></tr>
+        <tr><td>Products offered for sale: '.$serviceName.'</td></tr>
+        <tr><td>Message: '.$messageTxt.'</td></tr>
     </table>';
 
 if (@mail($to, $mail_subject, $message, $headers)) {
@@ -30,4 +32,3 @@ if (@mail($to, $mail_subject, $message, $headers)) {
 } else {
     echo json_encode( 'failed' );
 }
-

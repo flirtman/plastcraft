@@ -87,7 +87,8 @@ const ContactForm = () => {
             email: email,
             phone: phone,
             company: company,
-            message: message
+            message: message,
+            serviceName : serviceName.join(', '),
         };
 
         let errorsValidator = validate(objData);
@@ -104,7 +105,7 @@ const ContactForm = () => {
             (errorsValidator.message || message === '')
         ) {
 
-            axios.post(`/api/contact.php`, objData)
+            axios.post(`/api/proposal.php`, objData)
                 .then(response => {
                     swal("Good job!", "The information is on the way!", "success");
                     resetValues();
@@ -150,6 +151,7 @@ const ContactForm = () => {
         setPhone('');
         setCompany('');
         setMessage('');
+        setServiceName([]);
     };
 
     return (

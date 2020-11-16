@@ -78,7 +78,7 @@ const ContactForm = () => {
             (errorsValidator.message || message === '')
         ) {
 
-            axios.post(`http://localhost:8000/public/api/contact.php`, objData)
+            axios.post(`/api/contact.php`, objData)
                 .then(response => {
                     swal("Good job!", "The information is on the way!", "success");
                     resetValues();

@@ -88,12 +88,12 @@ const Projects = () => {
                 subscription : subscription
             };
 
-            setLoading(true)
+            setLoading(true);
 
-            axios.post(`http://localhost:8000/public/api/projects.php`, objData)
+            axios.post(`/api/projects.php`, objData)
                 .then(response => {
                     //console.log("contextApi got it", response);
-                    swal("Access was granted!", "Business plan was sent to your email.", "success");
+                    swal("Access was granted!", "You can now view the business plan below.", "success");
 
                     handleClose();
                     resetValues();
