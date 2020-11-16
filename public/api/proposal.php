@@ -1,7 +1,7 @@
 <?php
 $data = json_decode(file_get_contents("php://input"), true);
 
-$to = 'info@plastacraft.ca';
+$to = 'info@plastcraft.ca';
 //$to = 'biramediagroup@gmail.com';
 $fullName = $data['name'];
 $email = $data['email'];

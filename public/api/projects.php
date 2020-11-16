@@ -1,7 +1,7 @@
 <?php
 $data = json_decode(file_get_contents("php://input"), true);
 
-$to = 'info@plastacraft.ca';
+$to = 'info@plastcraft.ca';
 //$to = 'biramediagroup@gmail.com';
 $fullName = $data['fullName'];
 $email = $data['email'];
@@ -10,7 +10,7 @@ $projectSelected = $data['projectSelected'];
 $subscription = $data['subscription'];
 $mailSubject = "Plastacraft.ca Business Plan View - Projects";
 
-$from_email = 'noreply@plastcraft.ca';
+$from_email = 'no-reply@plastcraft.ca';
 $headers = 'MIME-Version: 1.0' . "\r\n";
 $headers .= "From: " . $from_email . "\r\n";
 $headers .= "Reply-To: $email" . "\r\n";
