@@ -374,3 +374,10 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .section-1 {
+    .left-col .left-col-footer {
+      position: initial;
+    }
+  }
+}

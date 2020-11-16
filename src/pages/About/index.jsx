@@ -37,18 +37,18 @@ const About = () => {
                 <div className={'section-4'}>
                     <Container>
                         <Row>
-                            <Col>
+                            <Col md={12} lg={4}>
                                 <h2>Our <span className={'txt-green'}>Vision</span></h2>
                                 <ul>
                                     <li>To be the market leader in the plastic recycling industry in North America, reputable for its advanced equipment and value-added processes.</li>
                                     <li>To be recognized as a key contributor to the betterment of the environment.</li>
                                 </ul>
                             </Col>
-                            <Col>
+                            <Col md={12} lg={4}>
                                 <h2>Our <span className={'txt-green'}>Mission</span></h2>
                                 <p>To offer high-quality recycled products to market by making use of a next-generation recycling process that is environmentally-friendly.</p>
                             </Col>
-                            <Col>
+                            <Col md={12} lg={4}>
                                 <h2>Our <span className={'txt-green'}>Values</span></h2>
                                 <ul>
                                     <li>To conduct activities that are effective, reliable, and safe for the well-being of employees and that exhibit responsibility to society and the environment.</li>

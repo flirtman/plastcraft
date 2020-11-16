@@ -45,6 +45,9 @@
       max-width: 725px;
     }
   }
+  .project-box.first-child {
+    border-right: 1px solid #ccc;
+  }
 }
 
 .modal-header,
@@ -61,4 +64,20 @@
   display: table;
   margin: 20px auto;
   color: #989ea2 !important;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+  .projects-wrap {
+    .project-box {
+      padding: 15px;
+    }
+    .project-box.first-child {
+      border-right: 0;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+  }
 }

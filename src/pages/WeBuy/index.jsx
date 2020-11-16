@@ -40,7 +40,7 @@ const WeBuy = () => {
                 </div>
                 <Row  className="box-section">
                     <Col md={8} className="bg-white">
-                        <div style={{padding: '50px'}}>
+                        <div className={'padding-50-lg'}>
                             <h2>Send us your proposal</h2>
                             <img src={emailFly} alt="" className="email-fly-icon"/>
                             <MakeAnOfferForm/>

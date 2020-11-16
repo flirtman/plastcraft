@@ -40,7 +40,7 @@ const WeSale = () => {
 
                 <Row>
                     {/*<Col xs={{span: 12, order: 2 }} lg={{span: 6, order: 1 }} className={'img-col'} style={{backgroundImage: `url(${LDPE})`}}></Col>*/}
-                    <Col xs={{span: 12, order: 2 }} lg={{span: 6, order: 1 }} className={'img-col'}></Col>
+                    <Col xs={{span: 12, order: 2 }} lg={{span: 6, order: 1 }} className={'img-col lgHidden'}></Col>
                     <Col xs={{span: 12, order: 1 }} lg={{span: 12, order: 2 }} lg={{span: 6, order: 2 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>LDPE <span className={'txt-green'}>(Low Density Polyethylene)</span></h2>
@@ -63,10 +63,10 @@ const WeSale = () => {
                         </div>
                         <div className={'triangle-left-60'}></div>
                     </Col>
-                    <Col xs={{span: 12, order: 4 }} lg={{span: 6, order: 4 }} className={'img-col'}></Col>
+                    <Col xs={{span: 12, order: 4 }} lg={{span: 6, order: 4 }} className={'img-col lgHidden'}></Col>
                 </Row>
                 <Row>
-                    <Col xs={{span: 12, order: 6 }} lg={{span: 6, order: 5 }} className={'img-col'}></Col>
+                    <Col xs={{span: 12, order: 6 }} lg={{span: 6, order: 5 }} className={'img-col lgHidden'}></Col>
                     <Col xs={{span: 12, order: 5 }} lg={{span: 6, order: 6 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>HDPE <span className={'txt-green'}>(High Density Polyethylene)</span></h2>
@@ -91,10 +91,10 @@ const WeSale = () => {
                         </div>
                         <div className={'triangle-left-60'}></div>
                     </Col>
-                    <Col xs={{span: 12, order: 8 }} lg={{span: 6, order: 8 }} className={'img-col'}></Col>
+                    <Col xs={{span: 12, order: 8 }} lg={{span: 6, order: 8 }} className={'img-col lgHidden'}></Col>
                 </Row>
                 <Row>
-                    <Col xs={{span: 12, order: 10 }} lg={{span: 6, order: 9 }} className={'img-col'}></Col>
+                    <Col xs={{span: 12, order: 10 }} lg={{span: 6, order: 9 }} className={'img-col lgHidden'}></Col>
                     <Col xs={{span: 12, order: 9 }} lg={{span: 6, order: 10 }} className={'txt-col'}>
                         <div className={'txt-col-cell'}>
                             <h2>ABS <span className={'txt-green'}>(Acrylonitrile Butadiene Styrene)</span></h2>
@@ -117,7 +117,7 @@ const WeSale = () => {
                         </div>
                         <div className={'triangle-left-60'}></div>
                     </Col>
-                    <Col xs={{span: 12, order: 12 }} lg={{span: 6, order: 12 }} className={'img-col'}></Col>
+                    <Col xs={{span: 12, order: 12 }} lg={{span: 6, order: 12 }} className={'img-col lgHidden'}></Col>
                 </Row>
                 <Row>
                     <Col xs={{span: 12, order: 12 }} lg={{span: 6, order: 12 }} className={'txt-col'}>
@@ -129,7 +129,7 @@ const WeSale = () => {
                         </div>
                         <div className={'triangle-right-60'}></div>
                     </Col>
-                    <Col xs={{span: 12, order: 13 }} lg={{span: 6, order: 13 }} className={'img-col'}></Col>
+                    <Col xs={{span: 12, order: 13 }} lg={{span: 6, order: 13 }} className={'img-col lgHidden'}></Col>
                 </Row>
 
                 <br/>

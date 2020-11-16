@@ -171,8 +171,8 @@ const Projects = () => {
                     <p>Great opportunity for investors and shareholders to join the next-generation plastic recycler.</p>
                 </div>
                 <Row>
-                    <Col>
-                        <div className={'project-box'}>
+                    <Col xs={12} sm={12} md={12} lg={6}>
+                        <div className={'project-box first-child'}>
                             <h2>Mechanical <span className={'txt-green'}>Recycling</span></h2>
                             <span display={displayProject('mechanical-recycling') === 'true' ? 'false' : 'true' }>
                                 <p>Mechanical recycling of mostpost-industrial plastic waste into top-grade plastic pellets for the further manufacturing process.</p>
@@ -187,7 +187,7 @@ const Projects = () => {
                             </span>
                         </div>
                     </Col>
-                    <Col>
+                    <Col xs={12} sm={12} md={12} lg={6}>
                         <div className={'project-box'}>
                             <h2>Chemical <span className={'txt-green'}>Recycling</span></h2>
                             <span display={displayProject('chemical-recycling') === 'true' ? 'false' : 'true' }>

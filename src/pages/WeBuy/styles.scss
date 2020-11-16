@@ -86,11 +86,18 @@
   font-style: italic;
   margin-bottom: 50px;
 }
+
+.padding-50-lg {
+  padding: 50px;
+}
+
 @media screen and (max-width: 767px) {
   .form-wrap {
     padding-bottom: 50px;
   }
-
+  .padding-50-lg {
+    padding: 50px 0;
+  }
 }
 
 @media screen and (max-width: 575px) {
