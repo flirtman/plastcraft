@@ -1,14 +1,14 @@
 <?php
 $data = json_decode(file_get_contents("php://input"), true);
 
-//$to = 'info@plastacraft.ca';
-$to = 'biramediagroup@gmail.com';
+$to = 'info@plastacraft.ca';
+//$to = 'biramediagroup@gmail.com';
 $fullName = $data['name'];
 $email = $data['email'];
 $phone = $data['phone'];
 $company = $data['company'];
 $messageTxt = $data['message'];
-$mail_subject = "Plastacraft.ca Contact Form";
+$mailSubject = "Plastacraft.ca Contact Form";
 
 $from_email = 'noreply@plastcraft.ca';
 $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -25,7 +25,7 @@ $message = '<table style="width:100%">
         <tr><td>Message: '.$messageTxt.'</td></tr>
     </table>';
 
-if (@mail($to, $mail_subject, $message, $headers)) {
+if (@mail($to, $mailSubject, $message, $headers)) {
     echo json_encode( 'The message has been sent.');
 } else {
     echo json_encode( 'failed' );
