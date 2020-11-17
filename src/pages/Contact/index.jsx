@@ -16,11 +16,19 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import PinterestIcon from '@material-ui/icons/Pinterest';
+import EmailIcon from '@material-ui/icons/Email';
 
 import './styles.scss';
 
 import emailFly from '../../assets/images/email-fly-green.png';
 import Footer from "../../components/Footer";
+
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    LinkedinShareButton,
+    TwitterShareButton,
+} from "react-share";
 
 const Contact = () => {
     return (
@@ -62,10 +70,10 @@ const Contact = () => {
                             </div>
                         </div>
                         <ul className="social-wrap">
-                            <li><a href="/"><FacebookIcon/></a></li>
-                            <li><a href="/"><LinkedInIcon/></a></li>
-                            <li><a href="/"><TwitterIcon/></a></li>
-                            <li><a href="/"><PinterestIcon/></a></li>
+                            <li><FacebookShareButton url={'http://plastcraft.ca'}><FacebookIcon/></FacebookShareButton></li>
+                            <li><LinkedinShareButton url={'http://plastcraft.ca'}><LinkedInIcon/></LinkedinShareButton></li>
+                            <li><TwitterShareButton url={'http://plastcraft.ca'}><TwitterIcon/></TwitterShareButton></li>
+                            <li><EmailShareButton url={'http://plastcraft.ca'}><EmailIcon/></EmailShareButton></li>
                         </ul>
                     </Col>
                 </Row>
