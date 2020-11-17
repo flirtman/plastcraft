@@ -1,12 +1,13 @@
 import React from 'react';
 import {Navbar, Nav,  NavDropdown} from 'react-bootstrap';
 import logo from '../../assets/images/logo_814x166.png';
+import './styles.scss';
 
 const MainNav = () => {
   return (
       <Navbar bg="dark" variant="dark" expand="lg">
-          <Navbar.Brand href="/" style={{width: '100%', maxWidth: '150px'}}>
-              <img src={logo} alt="" className="logo"  style={{width: '100%', maxWidth: '150px'}} />
+          <Navbar.Brand href="/">
+              <img src={logo} alt="" className="logo"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

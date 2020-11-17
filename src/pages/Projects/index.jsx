@@ -12,11 +12,12 @@ import './styles.scss';
 import mechanical_recycling_business_plan_final from '../../assets/pdf/mechanical_recycling_business_plan_final.pdf';
 import axios from "axios";
 import swal from "sweetalert";
+import {Link} from "react-router-dom";
 
 
 const Projects = () => {
     const [projectSelected, setProjectSelected] = useState(null);
-    const [loading,setLoading] = useState(false)
+    const [loading,setLoading] = useState(false);
 
     const [show, setShow] = useState(false);
     const handleClose = () => {
@@ -175,15 +176,18 @@ const Projects = () => {
                         <div className={'project-box first-child'}>
                             <h2>Mechanical <span className={'txt-green'}>Recycling</span></h2>
                             <span display={displayProject('mechanical-recycling') === 'true' ? 'false' : 'true' }>
-                                <p>Mechanical recycling of mostpost-industrial plastic waste into top-grade plastic pellets for the further manufacturing process.</p>
+                                <p>Mechanical recycling of most post-industrial plastic waste into top-grade plastic pellets for the further manufacturing process.</p>
                                 <div className={'text-center'}>
                                     <span onClick={() => handleShow('mechanical-recycling')}><ButtonCustom1 color={'blue'} href={false} text={'READ MORE'}/></span>
                                 </div>
                             </span>
                             <span display={displayProject('mechanical-recycling')}>
                                 Thank you for your interest.<br/>
-                                You can now view it below.<br/>
-                                It is also have been sent to your email.
+                                <span className={'hide-mobile'}>You can now view it below.</span>
+                                <span className={'show-mobile'}>
+                                    <Link to={mechanical_recycling_business_plan_final} className={"button-green-1"} target={'_blank'}>View PDF</Link>
+                                </span>
+                                <br/>
                             </span>
                         </div>
                     </Col>

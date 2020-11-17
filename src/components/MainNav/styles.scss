@@ -1,9 +1,8 @@
 .main-nav-wrap {
-  .brand-link {
-    max-width: 150px;
-    img {
+  .navbar-brand {
+    max-width: 70%;
+    .logo {
       width: 100%;
-      max-width: 150px;
     }
   }
 }

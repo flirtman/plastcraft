@@ -4,7 +4,7 @@ import React, { Suspense, lazy } from 'react';
 const Home = lazy(() => import('./Home'));
 const About = lazy(() => import('./About'));
 const Projects = lazy(() => import('./Projects'));
-const WeSale = lazy(() => import('./WeSale'));
+const WeSell = lazy(() => import('./WeSell'));
 const WeBuy = lazy(() => import('./WeBuy'));
 const Process = lazy(() => import('./Process'));
 const Contact = lazy(() => import('./Contact'));
@@ -17,7 +17,7 @@ const App = (props) => (
             <Switch>
                 <Route exact path={`/`} component={Home}/>
                 <Route path={`/projects`} component={Projects}/>
-                <Route path={`/we-sale`} component={WeSale}/>
+                <Route path={`/we-sell`} component={WeSell}/>
                 <Route path={`/we-buy`} component={WeBuy}/>
                 <Route path={`/process`} component={Process}/>
                 <Route path={`/about`} component={About}/>

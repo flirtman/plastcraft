@@ -70,7 +70,7 @@ const About = () => {
                     </p>
                     <hr/>
                 </div>
-                <div className={'text-center'}>
+                <div >
                     <h2>Our <span className={'txt-green'}>Team</span></h2>
                     <p>
                         Plastcraft boasts a team of motivated and experienced members who are passionate about minimizing plastic waste across<br/>
@@ -90,11 +90,11 @@ const About = () => {
                         <h3>Oleg Belyak</h3>
                         <h4><small>CEO</small></h4>
                         <p>
-                            Oleg served as the Executive Manager of a plastic
-                            recycling and processing company, Chiste Misto
-                            Ltd., Kryvyi Rih, Ukraine from 2015 to 2017. He
-                            also founded and managed a recycling company,
-                            Avior Ltd., in Ukraine between 2000 and 2014.
+                            Oleg Belyak contributes 20 years of experience in plastic recycling industry.
+                            He founded and managed a recycling company, Avior Ltd., in Ukraine between 2000 and 2014.
+                            Oleg also served as the Executive Manager of a plastic recycling and processing company,
+                            ChisteMisto Ltd., Kryvyi Rih, Ukraine from 2015 to 2017.
+
                         </p>
                         <p>
                             Oleg holds Associate, Bachelor’s and Master’s degrees in
