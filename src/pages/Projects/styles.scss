@@ -49,6 +49,16 @@
     border-right: 1px solid #ccc;
   }
 }
+.privacy-policy-wrapper {
+  margin-top: 25px;
+  margin-bottom: -25px;
+  .MuiFormHelperText-root {
+    display: none;
+  }
+  .MuiFormHelperText-root.Mui-error {
+    display: block;
+  }
+}
 
 .modal-header,
 .modal-footer {
@@ -62,8 +72,11 @@
 }
 .subscription-wrap {
   display: table;
-  margin: 20px auto;
+  margin: 20px 0;
   color: #989ea2 !important;
+  .MuiCheckbox-root {
+    margin-left: -11px;
+  }
 }
 
 .show-mobile {

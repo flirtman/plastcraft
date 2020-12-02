@@ -8,6 +8,7 @@ const WeSell = lazy(() => import('./WeSell'));
 const WeBuy = lazy(() => import('./WeBuy'));
 const Process = lazy(() => import('./Process'));
 const Contact = lazy(() => import('./Contact'));
+const PrivacyPolicy = lazy(() => import('./PrivacyPolicy'));
 
 const App = (props) => (
     <Router>
@@ -22,6 +23,7 @@ const App = (props) => (
                 <Route path={`/process`} component={Process}/>
                 <Route path={`/about`} component={About}/>
                 <Route path={`/contact`} component={Contact}/>
+                <Route path={`/privacy-policy`} component={PrivacyPolicy}/>
             </Switch>
         </Suspense>
     </Router>

@@ -13,6 +13,8 @@ import mechanical_recycling_business_plan_final from '../../assets/pdf/mechanica
 import axios from "axios";
 import swal from "sweetalert";
 import {Link} from "react-router-dom";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 
 const Projects = () => {
@@ -50,25 +52,35 @@ const Projects = () => {
         setPhone(e.target.value);
     };
 
-    const validation = () => {
-        var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}$/;
-        var emailRGEX = /^.{1,}@.{2,}\..{2,}/;
-        var nameRGEX = /^[a-zA-Z ]+$/;
+    const [privacyPolicyAgreement, setPrivacyPolicyAgreement] = React.useState(false);
+    const onPrivacyPolicyAgreementChange = (event) => {
+        setPrivacyPolicyAgreement(event.target.checked);
+        console.log(event.target.checked);
+    };
 
-        var phoneResult = phone.trim() !== '' ? phoneRGEX.test(phone.trim()) : true;
-        var emailResult = emailRGEX.test(email.trim());
-        var fullNameResult = nameRGEX.test(fullName.trim());
+    const validation = () => {
+        const phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}$/;
+        const emailRGEX = /^.{1,}@.{2,}\..{2,}/;
+        const nameRGEX = /^[a-zA-Z ]+$/;
+
+        let phoneResult = phone.trim() !== '' ? phoneRGEX.test(phone.trim()) : true;
+        let emailResult = emailRGEX.test(email.trim());
+        let fullNameResult = nameRGEX.test(fullName.trim());
+        let privacyPolicyAgreementResult = privacyPolicyAgreement;
 
         return {
             phone: phoneResult,
             email: emailResult,
-            fullName: fullNameResult
+            fullName: fullNameResult,
+            privacyPolicyAgreement: privacyPolicyAgreementResult
         };
     };
+
 
     const [fullNameError, setFullNameError] = useState(false);
     const [emailError, setEmailError] = useState(false);
     const [phoneError, setPhoneError] = useState(false);
+    const [privacyPolicyAgreementError, setPrivacyPolicyAgreementError] = useState(false);
 
     const handleSubmit = () => {
 
@@ -77,8 +89,9 @@ const Projects = () => {
         errorsValidator.fullName ? setFullNameError(false) : setFullNameError(true);
         errorsValidator.email ? setEmailError(false) : setEmailError(true);
         errorsValidator.phone ? setPhoneError(false) : setPhoneError(true);
+        errorsValidator.privacyPolicyAgreement ? setPrivacyPolicyAgreementError(false) : setPrivacyPolicyAgreementError(true);
 
-        if(errorsValidator.fullName && errorsValidator.email && errorsValidator.phone) {
+        if(errorsValidator.fullName && errorsValidator.email && errorsValidator.phone && errorsValidator.privacyPolicyAgreement) {
             localStorage.setItem("gaccess", `${projectSelected}`);
 
             let objData = {
@@ -86,7 +99,8 @@ const Projects = () => {
                 fullName : fullName,
                 email : email,
                 phone : phone,
-                subscription : subscription
+                subscription : subscription,
+                privacyPolicyAgreement: privacyPolicyAgreement
             };
 
             setLoading(true);
@@ -113,6 +127,7 @@ const Projects = () => {
         setFullNameError(false);
         setEmailError(false);
         setPhoneError(false);
+        setPrivacyPolicyAgreementError(false);
 
         setFullName('');
         setEmail('');
@@ -136,6 +151,15 @@ const Projects = () => {
                             <TextField required id="standard-required" label="Full Name" defaultValue="" fullWidth onChange={handleFullName} error={fullNameError}/><br/>
                             <TextField required id="standard-required" label="Email" defaultValue="" fullWidth onChange={handleEmail} error={emailError}/><br/>
                             <TextField id="standard-required" label="Phone" defaultValue="" fullWidth onChange={handlePhone} error={phoneError}/><br/>
+                            <div className={'privacy-policy-wrapper'}>
+                                <FormControlLabel
+                                    control={<Checkbox color="primary" name="checkedC" onChange={onPrivacyPolicyAgreementChange} />}
+                                    label={<i>I agree to the <a href="contact" target={'_blank'}>Privacy policy</a>.</i>}
+                                />
+                                <FormHelperText fullWidth error={privacyPolicyAgreementError}>
+                                    To submit the form you must to agree that you have reed our Privacy policy.
+                                </FormHelperText>
+                            </div>
                             <label className={'subscription-wrap'}>
                                 <Checkbox
                                     color="primary"

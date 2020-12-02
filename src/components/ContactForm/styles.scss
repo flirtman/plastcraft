@@ -27,4 +27,14 @@
       background: $colorGreen;
     }
   }
+  .privacy-policy-wrapper {
+    margin-top: 25px;
+    margin-bottom: -25px;
+    .MuiFormHelperText-root {
+      display: none;
+    }
+    .MuiFormHelperText-root.Mui-error {
+      display: block;
+    }
+  }
 }

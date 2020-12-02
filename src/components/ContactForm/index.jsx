@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+
 import {Row, Col} from 'react-bootstrap';
 import NearMeIcon from '@material-ui/icons/NearMe';
 
@@ -46,22 +50,30 @@ const ContactForm = () => {
     };
 
 
+    const [privacyPolicyAgreement, setPrivacyPolicyAgreement] = React.useState(false);
+    const onPrivacyPolicyAgreementChange = (event) => {
+        setPrivacyPolicyAgreement(event.target.checked);
+        console.log(event.target.checked);
+    };
+
     const [nameError, setNameError] = useState(false);
     const [emailError, setEmailError] = useState(false);
     const [phoneError, setPhoneError] = useState(false);
     const [companyError, setCompanyError] = useState(false);
     const [messageError, setMessageError] = useState(false);
+    const [privacyPolicyAgreementError, setPrivacyPolicyAgreementError] = useState(false);
 
 
     const handleSubmit = (e) => {
-        console.log(e);
+
         e.preventDefault();
         let objData = {
             name: fullName,
             email: email,
             phone: phone,
             company: company,
-            message: message
+            message: message,
+            privacyPolicyAgreement: privacyPolicyAgreement
         };
 
         let errorsValidator = validate(objData);
@@ -71,9 +83,10 @@ const ContactForm = () => {
         errorsValidator.phone ? setPhoneError(false) : setPhoneError(true);
         errorsValidator.company ? setCompanyError(false) : setCompanyError(true);
         errorsValidator.message ? setMessageError(false) : setMessageError(true);
+        errorsValidator.privacyPolicyAgreement ? setPrivacyPolicyAgreementError(false) : setPrivacyPolicyAgreementError(true);
 
         if(
-            errorsValidator.name && errorsValidator.email && errorsValidator.phone &&
+            errorsValidator.name && errorsValidator.email && errorsValidator.phone && errorsValidator.privacyPolicyAgreement &&
             (errorsValidator.company || company === '') &&
             (errorsValidator.message || message === '')
         ) {
@@ -86,29 +99,31 @@ const ContactForm = () => {
                 console.log("contextApi error.response", error.response);
                 swal("Oups!", "We have some error here!", "error");
             });
-
         }
+
     };
 
     const validate = (data) => {
-        var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}$/;
+        const phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{4}$/;
         // var emailRGEX = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
-        var emailRGEX = /^.{1,}@.{2,}\..{2,}/;
-        var nameRGEX = /^[a-zA-Z ]+$/;
-        var txtRGEX = /^[_A-z0-9]*((-|\s)*[_A-z0-9])*$/;
+        const emailRGEX = /^.{1,}@.{2,}\..{2,}/;
+        const nameRGEX = /^[a-zA-Z ]+$/;
+        const txtRGEX = /^[_A-z0-9]*((-|\s)*[_A-z0-9])*$/;
 
-        var phoneResult = phoneRGEX.test(data.phone.trim());
-        var emailResult = emailRGEX.test(data.email.trim());
-        var nameResult = nameRGEX.test(data.name.trim());
-        var companyResult = txtRGEX.test(data.company.trim());
-        var messageResult = txtRGEX.test(data.message.trim());
+        let phoneResult = phoneRGEX.test(data.phone.trim());
+        let emailResult = emailRGEX.test(data.email.trim());
+        let nameResult = nameRGEX.test(data.name.trim());
+        let companyResult = txtRGEX.test(data.company.trim());
+        let messageResult = txtRGEX.test(data.message.trim());
+        let privacyPolicyAgreementResult = data.privacyPolicyAgreement;
 
         return {
             name : nameResult,
             phone : phoneResult,
             email : emailResult,
             company: companyResult,
-            message: messageResult
+            message: messageResult,
+            privacyPolicyAgreement: privacyPolicyAgreementResult
         }
     };
 
@@ -118,6 +133,7 @@ const ContactForm = () => {
         setPhoneError(false);
         setCompanyError(false);
         setMessageError(false);
+        setPrivacyPolicyAgreementError(false);
 
         setFullName('');
         setEmail('');
@@ -149,6 +165,19 @@ const ContactForm = () => {
                     <Col>
                         <TextField multiline rows={6} fullWidth label="Message" value={message} onChange={onMessageChange} error={messageError}/>
                         <div className="btn-submit-form" onClick={handleSubmit}><NearMeIcon/></div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col sm={12} md={12}>
+                        <div className={'privacy-policy-wrapper'}>
+                            <FormControlLabel
+                                control={<Checkbox color="primary" name="checkedC" onChange={onPrivacyPolicyAgreementChange} />}
+                                label={<i>I agree to the <a href="privacy-policy" target={'_blank'}>Privacy policy</a>.</i>}
+                            />
+                            <FormHelperText fullWidth error={privacyPolicyAgreementError}>
+                                To submit the form you must to agree that you have reed our Privacy policy.
+                            </FormHelperText>
+                        </div>
                     </Col>
                 </Row>
             </form>

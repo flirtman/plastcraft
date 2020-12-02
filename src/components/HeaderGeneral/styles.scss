@@ -76,6 +76,9 @@ header.general {
     font-size: 6rem;
     transform: rotate(90deg);
   }
+  #privacy-policy {
+    display: none;
+  }
 }
 @media only screen and (min-width: 992px) {
   .main-nav-wrap {

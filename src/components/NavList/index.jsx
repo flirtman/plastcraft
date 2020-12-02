@@ -18,6 +18,7 @@ const NavList = () => {
             <li className={isActive('process')}><Link to={'/process'}>Process</Link></li>
             <li className={isActive('about')}><Link to={'/about'}>About Us</Link></li>
             <li className={isActive('contact')}><Link to={'/contact'}>Contact Us</Link></li>
+            <li className={isActive('privacy-policy')} id={'privacy-policy'}><Link to={'/privacy-policy'}>Privacy Policy</Link></li>
         </ul>
     )
 };
